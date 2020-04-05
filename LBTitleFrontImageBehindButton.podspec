@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "LBTitleFrontImageBehindButton"
-  spec.version      = "0.0.1"
+  spec.version      = "1.0.0"
   spec.summary      = "LBTitleFrontImageBehindButton"
   spec.description  = "更改系统UIButton的排列方式，系统的UIButton是image在前title在后，使其title在前面image在后面。"
   spec.homepage     = "https://github.com/A1129434577/LBTitleFrontImageBehindButton"

@@ -25,7 +25,20 @@
     [super layoutSubviews];
     CGRect titleLabelFrame = self.titleLabel.frame;
     CGRect imageViewFrame = self.imageView.frame;
-    CGFloat minX = (CGRectGetWidth(self.bounds)-(CGRectGetWidth(titleLabelFrame)+CGRectGetWidth(imageViewFrame)+self.spacing))/2;
+    
+    CGFloat minX = 0;
+
+    switch (self.contentHorizontalAlignment) {
+        case UIControlContentHorizontalAlignmentCenter:
+            minX = (CGRectGetWidth(self.bounds)-(CGRectGetWidth(titleLabelFrame)+CGRectGetWidth(imageViewFrame)+self.spacing))/2;
+            break;
+        case UIControlContentHorizontalAlignmentRight:
+            minX = CGRectGetWidth(self.bounds)-(CGRectGetWidth(titleLabelFrame)+CGRectGetWidth(imageViewFrame)+self.spacing);
+            break;
+        default:
+
+            break;
+    }
     titleLabelFrame.origin.x = minX;
     imageViewFrame.origin.x = CGRectGetMaxX(titleLabelFrame)+self.spacing;
     self.titleLabel.frame = titleLabelFrame;
