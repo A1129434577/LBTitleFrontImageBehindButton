@@ -30,10 +30,13 @@
 
     switch (self.contentHorizontalAlignment) {
         case UIControlContentHorizontalAlignmentCenter:
-            minX = (CGRectGetWidth(self.bounds)-(CGRectGetWidth(titleLabelFrame)+CGRectGetWidth(imageViewFrame)+self.spacing))/2;
+            minX = (CGRectGetWidth(self.bounds)-(CGRectGetWidth(titleLabelFrame)+CGRectGetWidth(imageViewFrame)+self.spacing))/2-self.imageEdgeInsets.right+self.titleEdgeInsets.left;
             break;
         case UIControlContentHorizontalAlignmentRight:
-            minX = CGRectGetWidth(self.bounds)-(CGRectGetWidth(titleLabelFrame)+CGRectGetWidth(imageViewFrame)+self.spacing);
+            minX = CGRectGetWidth(self.bounds)-(CGRectGetWidth(titleLabelFrame)+CGRectGetWidth(imageViewFrame)+self.spacing)-self.imageEdgeInsets.right;
+            break;
+        case UIControlContentHorizontalAlignmentLeft:
+            minX = self.titleEdgeInsets.left;
             break;
         default:
 
